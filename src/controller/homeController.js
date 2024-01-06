@@ -5,8 +5,11 @@ const handleHelloWorld = (req, res) => {
     return res.render("home.ejs", {name});
 }
 
-const handleUserPage = (req, res) => {
-    return res.render("user.ejs");
+const handleUserPage = async (req, res) => {
+    // model => get data from database
+    let userList = await userService.getUserList();
+    // console.log("Check userList: ", userList);
+    return res.render("user.ejs", {userList});
 }
 
 const handleCreateNewUser = (req, res) => {
