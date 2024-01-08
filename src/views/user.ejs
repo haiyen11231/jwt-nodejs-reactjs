@@ -60,7 +60,9 @@
                                 <td><%= item.username %></td>
                                 <td>
                                     <button type="button" class="btn btn-warning">Edit</button>
-                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    <form action="/delete-user/<%= item.id%>" method="POST" style="display: inline;">
+                                        <button class="btn btn-danger" type="submit">Delete</button>
+                                    </form>
                                 </td>
                               </tr>
                         <% }) %>
